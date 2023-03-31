@@ -2,6 +2,8 @@
     "editor.codeActionsOnSave": {"source.organizeImports": true},
     "editor.inlayHints.enabled": "off",
 
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+
     "files.exclude": { },
 
     "java.configuration.updateBuildConfiguration": "automatic",
@@ -12,6 +14,7 @@
 
     "maven.view": "flat",
     "prettier.tabWidth": 4,
+    "prettier.semi": false,
 
     "rest-client.enableTelemetry": false,
     "rest-client.previewOption": "exchange",
