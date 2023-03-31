@@ -4,13 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
-import org.springframework.http.HttpMethod;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-
+import boot.AppProperties;
 import boot.entity.Country;
 import boot.entity.Order;
 import boot.entity.Product;
@@ -18,16 +12,22 @@ import boot.entity.ProductCategory;
 import boot.entity.State;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    @Value("${app.prop.allowedOrigins}")
-    private String[] theAllowedOrigins;
-
+    private AppProperties properties;
     private EntityManager entityManager;
 
-    public MyDataRestConfig(EntityManager theEntityManager) {
+    @Autowired
+    MyDataRestConfig(EntityManager theEntityManager, AppProperties properties) {
+        this.properties = properties;
         this.entityManager = theEntityManager;
     }
 
@@ -49,7 +49,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         this.exposeIds(config);
 
         // configure cors mapping
-        cors.addMapping(config.getBasePath() + "/**").allowedOrigins(this.theAllowedOrigins);
+        cors.addMapping(config.getBasePath() + "/**").allowedOrigins(this.properties.getCors());
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
