@@ -10,4 +10,5 @@ import boot.entity.ProductCategory;
 @RepositoryRestResource(collectionResourceRel = "productCategory", path = "product-category")
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
     
+
 }
