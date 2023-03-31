@@ -7,13 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
-import com.stripe.Stripe;
-import com.stripe.exception.StripeException;
-import com.stripe.model.PaymentIntent;
-
+import boot.AppProperties;
 import boot.dao.CustomerRepository;
 import boot.dto.PaymentInfo;
 import boot.dto.Purchase;
@@ -21,18 +15,27 @@ import boot.dto.PurchaseResponse;
 import boot.entity.Customer;
 import boot.entity.Order;
 import boot.entity.OrderItem;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
+    private final AppProperties properties;
+
     private CustomerRepository customerRepository;
 
-    public CheckoutServiceImpl(CustomerRepository customerRepository, @Value("${stripe.key.secret}") String secretKey) {
-
+    @Autowired
+    public CheckoutServiceImpl(CustomerRepository customerRepository, AppProperties properties) {
+        
+        this.properties = properties;        
         this.customerRepository = customerRepository;
 
-        Stripe.apiKey = secretKey;
+        Stripe.apiKey = this.properties.getStripe();
 
     }
 
