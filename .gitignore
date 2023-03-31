@@ -1,6 +1,6 @@
 
 ### spring ###
-env.properties
+**/env.properties
 
 ### maven ###
 HELP.md
