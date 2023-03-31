@@ -1,4 +1,29 @@
 {
+    "editor.codeActionsOnSave": {"source.organizeImports": true},
+    "editor.inlayHints.enabled": "off",
+
+    "files.exclude": { },
+
+    "java.configuration.updateBuildConfiguration": "automatic",
     "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.completion.importOrder": ["java", "javax"],
+    "java.saveActions.organizeImports": true,
+    "java.cleanup.actionsOnSave": ["qualifyMembers"],   
+
+    "maven.view": "flat",
+    "prettier.tabWidth": 4,
+
+    "rest-client.enableTelemetry": false,
+    "rest-client.previewOption": "exchange",
+    "rest-client.previewResponsePanelTakeFocus": false,
+
+    "spring-boot.ls.java.home":"C:/Program Files/BellSoft/LibericaJDK-17/bin",
+
+    "terminal.integrated.scrollback": 10000,  
+
+    "workbench.editorAssociations": {
+       "*.md": "vscode.markdown.preview.editor"
+    },
+    "java.dependency.packagePresentation": "flat",
+
 }
