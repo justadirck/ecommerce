@@ -1,8 +1,4 @@
 
-### spring ###
-env.properties
-
-### maven ###
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -31,3 +27,5 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
+
+env.properties

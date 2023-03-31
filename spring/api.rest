@@ -1,0 +1,24 @@
+@lclssl = localhost:8443
+
+@host = {{lclssl}}
+
+### 
+GET https://{{host}}/api
+
+###
+GET https://{{host}}/api/orders
+
+###
+GET https://{{host}}/api/states
+
+###
+GET https://{{host}}/api/countries
+
+###
+GET https://{{host}}/api/products
+
+###
+GET https://{{host}}/api/products?page=0&size=100
+
+###
+GET https://{{host}}/api/product-category
