@@ -64,8 +64,8 @@
                     "options": {
                         "browserTarget": "angular:build",
                         "ssl": true,
-                        "sslKey": "ssl/localhost/ecommerce.key",
-                        "sslCert": "ssl/localhost/ecommerce.crt"
+                        "sslKey": "ssl/localhost.key",
+                        "sslCert": "ssl/localhost.crt"
                     },
                     "configurations": {
                         "production": {

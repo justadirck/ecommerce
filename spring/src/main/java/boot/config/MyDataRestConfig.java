@@ -12,7 +12,6 @@ import boot.entity.ProductCategory;
 import boot.entity.State;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -26,7 +25,6 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     
     private EntityManager entityManager;
 
-    @Autowired
     MyDataRestConfig(EntityManager entityManager, AppProperties properties) {
         this.properties = properties;
         this.entityManager = entityManager;

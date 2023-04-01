@@ -19,7 +19,6 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,7 +28,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
 
-    @Autowired
     public CheckoutServiceImpl(CustomerRepository customerRepository, AppProperties properties) {
         
         this.properties = properties;        
