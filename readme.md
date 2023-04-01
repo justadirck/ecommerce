@@ -1,7 +1,0 @@
-# ecommerce
-
-## angular
-
-## spring
-
-## mysql

@@ -14,7 +14,7 @@ import { ProductCategory } from '../common/product-category'
 export class ProductService {
 
     private productUrl = `${environment.apiroot}/api/products`
-    private categoryUrl = `${environment.apiroot}/api/product-category'`
+    private categoryUrl = `${environment.apiroot}/api/product-category`
 
     constructor(private httpClient: HttpClient) { }
 

@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+
+    spring:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - 8080:8080
+            - 8443:8443
+        networks:
+            - asmd_net
+
+    angular:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - 4200:4200
+        networks:
+            - asmd_net
+            
+networks:
+    asmd_net:
+        driver: bridge
