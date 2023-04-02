@@ -2,10 +2,24 @@ version: "3.8"
 
 services:
 
+    spring:
+        image: spring:latest
+        container_name: spring
+        build:
+            context: ./spring
+        ports:
+            - 8080:8080
+            - 8443:8443
+        depends_on:
+            - mysql
+        networks:
+            - asmd_net
+
     mysql:
-        build: ./mysql
         image: mysql:8.0
         container_name: mysql
+        build: 
+            context: ./mysql        
         environment:
             - MYSQL_USER=ecommerceapp
             - MYSQL_PASSWORD=ecommerceapp
@@ -17,3 +31,7 @@ services:
         volumes:
             - ./mysql/initdb.d:/docker-entrypoint-initdb.d
             - ./mysql/conf.d:/etc/mysql/conf.d
+
+networks:
+    asmd_net:
+        driver: bridge            
