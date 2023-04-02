@@ -19,13 +19,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
-public class MyDataRestConfig implements RepositoryRestConfigurer {
+public class RestConfig implements RepositoryRestConfigurer {
 
     private AppProperties properties;
     
     private EntityManager entityManager;
 
-    MyDataRestConfig(EntityManager entityManager, AppProperties properties) {
+    RestConfig(EntityManager entityManager, AppProperties properties) {
         this.properties = properties;
         this.entityManager = entityManager;
     }

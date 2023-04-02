@@ -7,14 +7,14 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class MyAppConfig implements WebMvcConfigurer {
+public class MvcConfig implements WebMvcConfigurer {
 
     @Value("${spring.data.rest.base-path}")
     private String basePath;
 
     private AppProperties properties;
 
-    MyAppConfig(AppProperties properties){
+    MvcConfig(AppProperties properties){
         this.properties = properties;
     }
 
@@ -25,13 +25,3 @@ public class MyAppConfig implements WebMvcConfigurer {
         
     }
 }
-
-
-
-
-
-
-
-
-
-
