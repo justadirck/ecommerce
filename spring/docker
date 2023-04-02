@@ -1,0 +1,3 @@
+FROM openjdk:17-jdk-alpine
+COPY target/spring.jar spring.jar
+ENTRYPOINT ["java","-jar","/spring.jar"]
