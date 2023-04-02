@@ -1,0 +1,30 @@
+https://gist.github.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb
+############################################################################
+#                                                                          #
+#               ------- Useful Docker Aliases --------                     #
+#                                                                          #
+#     # Installation :                                                     #
+#     copy/paste these lines into your .bashrc or .zshrc file or just      #
+#     type the following in your current shell to try it out:              #
+#     wget -O - https://gist.githubusercontent.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb/raw/d84ef1741c59e7ab07fb055a70df1830584c6c18/docker-aliases.sh | bash
+#                                                                          #
+#     # Usage:                                                             #
+#     daws <svc> <cmd> <opts> : aws cli in docker with <svc> <cmd> <opts>  #
+#     dc             : docker-compose                                      #
+#     dcu            : docker-compose up -d                                #
+#     dcd            : docker-compose down                                 #
+#     dcr            : docker-compose run                                  #
+#     dex <container>: execute a bash shell inside the RUNNING <container> #
+#     di <container> : docker inspect <container>                          #
+#     dim            : docker images                                       #
+#     dip            : IP addresses of all running containers              #
+#     dl <container> : docker logs -f <container>                          #
+#     dnames         : names of all running containers                     #
+#     dps            : docker ps                                           #
+#     dpsa           : docker ps -a                                        #
+#     drmc           : remove all exited containers                        #
+#     drmid          : remove all dangling images                          #
+#     drun <image>   : execute a bash shell in NEW container from <image>  #
+#     dsr <container>: stop then remove <container>                        #
+#                                                                          #
+############################################################################
