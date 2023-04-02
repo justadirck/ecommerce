@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
     mysql:
-        build: ./docker/mysql
+        build: ./mysql
         image: mysql:8.0
         container_name: mysql
         environment:
@@ -15,7 +15,5 @@ services:
         ports:
             - 3306:3306
         volumes:
-            - ./mysql/data:/var/lib/mysql
             - ./mysql/initdb.d:/docker-entrypoint-initdb.d
             - ./mysql/conf.d:/etc/mysql/conf.d
-            - ./mysql/log:/var/log/mysql
