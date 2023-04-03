@@ -1,6 +1,7 @@
 # https://docs.docker.com/language/java
 
 FROM openjdk:17-jdk-alpine as base
+
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
@@ -17,6 +18,5 @@ FROM base as build
 RUN ./mvnw package
 
 FROM openjdk:17-jdk-alpine as production
-EXPOSE 8443
 COPY --from=build /app/target/spring.jar /spring.jar
 CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/spring.jar"]

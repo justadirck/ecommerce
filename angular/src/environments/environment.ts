@@ -1,8 +1,8 @@
 export const environment = {
     production: false,
 
-    apiroot: 'https://localhost:8443',
-    
+    apiroot: 'http://localhost:8080',
+
     auth0name: 'ecommerce',
     auth0domain: 'dev-w16bz27xvsq6zkee.us.auth0.com',
     auth0clientid: 'SaA5PyvwfCXLgyzI1yOWUA148bfwt9GX',

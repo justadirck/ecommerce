@@ -20,7 +20,7 @@ export class ProductService {
 
     private getProducts(term: string): Observable<Product[]> {
 
-        return this.httpClient.get<GetResponseProducts>(term).pipe(map(response => response._embedded.products))
+        return this.httpClient.get<GetResponseProducts>(term).pipe(map( (response:any) => response._embedded.products))
 
     }
 
@@ -63,7 +63,7 @@ export class ProductService {
     getProductCategories(): Observable<ProductCategory[]> {
 
         return this.httpClient.get<GetResponseProductCategory>(this.categoryUrl).pipe(
-            map(response => response._embedded.productCategory)
+            map( (response: any) => response._embedded.productCategory)
         )
 
     }

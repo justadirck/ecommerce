@@ -15,13 +15,13 @@ export class FormService {
     private countriesUrl = `${environment.apiroot}/api/countries`
 
     constructor(private httpClient: HttpClient) {
-        
+
     }
 
     getCountries(): Observable<Country[]> {
 
         return this.httpClient.get<GetResponseCountries>(this.countriesUrl).pipe(
-            map(response => response._embedded.countries)
+            map( (response: any) => response._embedded.countries)
         )
 
     }
@@ -31,7 +31,7 @@ export class FormService {
         const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${countryCode}`
 
         return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
-            map(response => response._embedded.states)
+            map( (response: any) => response._embedded.states)
         )
 
     }

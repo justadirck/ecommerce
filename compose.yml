@@ -14,26 +14,23 @@ services:
             - /app/node_modules
 
     spring:
-        restart: always
         hostname: spring
         container_name: spring
         build: 
             context: ./spring
-            target: production 
+            target: development 
         ports:
-            - 8000:8000
             - 8080:8080
-            - 8443:8443
         volumes:
             - ./spring:/app      
         depends_on:
             - mysql
 
     mysql:
-        restart: always    
         hostname: mysql
         container_name: mysql
-        build: ./mysql
+        build: 
+            context: ./mysql
         ports:
             - 3306:3306            
         environment:
