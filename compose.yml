@@ -2,8 +2,19 @@ version: "3.8"
 
 services:
 
+    angular:
+        hostname: angular
+        container_name: angular
+        build:
+            context: ./angular
+        ports:
+            - 4200:4200
+        volumes:
+            - ./angular:/app
+            - /app/node_modules
+
     spring:
-        restart: always    
+        restart: always
         hostname: spring
         container_name: spring
         build: 
@@ -19,10 +30,10 @@ services:
             - mysql
 
     mysql:
-        build: ./mysql
         restart: always    
         hostname: mysql
         container_name: mysql
+        build: ./mysql
         ports:
             - 3306:3306            
         environment:
