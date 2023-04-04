@@ -30,4 +30,4 @@ jobs:
           context: ./spring
           file: ./spring/dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-spring:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/shopping-spring:latest

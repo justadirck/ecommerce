@@ -36,9 +36,9 @@ services:
         environment:
             - MYSQL_ROOT_HOST=%
             - MYSQL_ROOT_PASSWORD=r00t123        
-            - MYSQL_USER=ecommerceapp
-            - MYSQL_PASSWORD=ecommerceapp
-            - MYSQL_DATABASE=ecommerceapp
+            - MYSQL_USER=shopping
+            - MYSQL_PASSWORD=shopping
+            - MYSQL_DATABASE=shopping
         volumes:
             - ./mysql/conf.d:/etc/mysql/conf.d
             - ./mysql/initdb.d:/docker-entrypoint-initdb.d

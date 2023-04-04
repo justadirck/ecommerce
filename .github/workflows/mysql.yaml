@@ -30,4 +30,4 @@ jobs:
           context: ./mysql
           file: ./mysql/dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-mysql:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/shopping-mysql:latest

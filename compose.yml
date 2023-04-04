@@ -21,6 +21,5 @@ services:
 
     mysql:
         build: mysql
-        # image: justadirck/ecommerce-mysql:latest    
         ports:
             - 3306:3306

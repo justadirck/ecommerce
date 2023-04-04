@@ -30,4 +30,4 @@ jobs:
           context: ./angular
           file: ./angular/dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-angular:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/shopping-angular:latest
