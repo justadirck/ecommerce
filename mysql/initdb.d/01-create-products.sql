@@ -1,7 +1,6 @@
+use `shopping`;
 
-drop schema if exists `ecommerceapp`;
-create schema `ecommerceapp`;
-use `ecommerceapp`;
+set foreign_key_checks = 0;
 
 create table if not exists `product_category` (
   `id` bigint(20) not null auto_increment,
@@ -138,3 +137,4 @@ insert into product (sku, name, description, image_url, active, units_in_stock, 
 insert into product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) values ('luggagetag-1023', 'luggage tag - flames', 'this luggage tag will help you identify your luggage. the luggage tag is very unique and it will stand out from the crowd. the luggage tag is created out of a rugged and durable plastic. buy this luggage tag now to make it easy to identify your luggage!', 'assets/images/products/luggagetags/luggagetag-luv2code-1023.png', 1, 100, 16.99, 4, now());
 insert into product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) values ('luggagetag-1024', 'luggage tag - countryside', 'this luggage tag will help you identify your luggage. the luggage tag is very unique and it will stand out from the crowd. the luggage tag is created out of a rugged and durable plastic. buy this luggage tag now to make it easy to identify your luggage!', 'assets/images/products/luggagetags/luggagetag-luv2code-1024.png', 1, 100, 16.99, 4, now());
 
+set foreign_key_checks = 1;

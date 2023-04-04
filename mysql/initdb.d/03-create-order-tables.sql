@@ -1,12 +1,11 @@
-
-use `ecommerceapp`;
+use `shopping`;
 
 set foreign_key_checks=0;
+
 drop table if exists `order_item`;
 drop table if exists `orders`;
 drop table if exists `customer`;
 drop table if exists `address`;
-set foreign_key_checks=1;
 
 create table `address` (
   `id` bigint not null auto_increment,
@@ -58,3 +57,5 @@ create table `order_item` (
   constraint `fk_order_id` foreign key (`order_id`) references `orders` (`id`),
   constraint `fk_product_id` foreign key (`product_id`) references `product` (`id`)
 ) engine=innodb auto_increment=1 default charset=utf8mb4 collate=utf8mb4_0900_ai_ci;
+
+set foreign_key_checks=1;

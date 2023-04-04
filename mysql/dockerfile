@@ -1,10 +1,10 @@
 FROM mysql:8.0
 
 ENV MYSQL_ROOT_HOST %
-ENV MYSQL_USER ecommerceapp
-ENV MYSQL_PASSWORD ecommerceapp
-ENV MYSQL_DATABASE ecommerceapp
+ENV MYSQL_USER shopping
+ENV MYSQL_PASSWORD shopping
+ENV MYSQL_DATABASE shopping
 ENV MYSQL_ALLOW_EMPTY_PASSWORD "yes"
 
-COPY my.cnf /etc/mysql/conf.d/
-COPY ./sql/ /docker-entrypoint-initdb.d/
+COPY conf.d /etc/mysql/conf.d/
+COPY initdb.d /docker-entrypoint-initdb.d/
