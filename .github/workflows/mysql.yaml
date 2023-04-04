@@ -5,6 +5,7 @@ on:
     branches:
       - "master"
     paths:
+      - "workflows/mysql.yaml"
       - "mysql/**"
 
 jobs:
