@@ -3,10 +3,7 @@ version: "3.8"
 services:
 
     angular:
-        hostname: angular
-        container_name: angular
-        build:
-            context: ./angular
+        build: angular
         ports:
             - 80:80
         volumes:
@@ -14,31 +11,15 @@ services:
             - /app/node_modules
 
     spring:
-        hostname: spring
-        container_name: spring
-        build: 
-            context: ./spring
-            target: development 
+        build: spring
         ports:
             - 8080:8080
         volumes:
-            - ./spring:/app      
+            - ./spring:/app
         depends_on:
             - mysql
 
     mysql:
-        hostname: mysql
-        container_name: mysql
-        build: 
-            context: ./mysql
+        build: mysql
         ports:
-            - 3306:3306            
-        environment:
-            - MYSQL_ROOT_HOST=%
-            - MYSQL_ROOT_PASSWORD=r00t123        
-            - MYSQL_USER=ecommerceapp
-            - MYSQL_PASSWORD=ecommerceapp
-            - MYSQL_DATABASE=ecommerceapp
-        volumes:
-            - ./mysql/conf.d:/etc/mysql/conf.d
-            - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+            - 3306:3306
