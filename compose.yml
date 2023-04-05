@@ -3,11 +3,13 @@ version: "3.8"
 services:
 
     angular:
+        # build: angular
         image: justadirck/shopping-angular:latest
         ports:
             - 80:80
 
     spring:
+        # build: spring
         image: justadirck/shopping-spring:latest
         ports:
             - 8080:8080
@@ -15,6 +17,7 @@ services:
             - mysql
 
     mysql:
+        # build: mysql
         image: justadirck/shopping-mysql:latest
         ports:
             - 3306:3306
