@@ -2,24 +2,30 @@ version: "3.8"
 
 services:
 
-    angular:
-        build: angular
-        ports:
-            - 80:80
-        volumes:
-            - ./angular:/app
-            - /app/node_modules
+    # angular:
+    #     build: angular
+    #     ports:
+    #         - 80:80
+    #     volumes:
+    #         - ./angular:/app
+    #         - /app/node_modules
 
-    spring:
-        build: spring
-        ports:
-            - 8080:8080
-        volumes:
-            - ./spring:/app
-        depends_on:
-            - mysql
+    # spring:
+    #     build: spring
+    #     ports:
+    #         - 8080:8080
+    #     volumes:
+    #         - ./spring:/app
+    #     depends_on:
+    #         - mysql
 
     mysql:
-        build: mysql
+        image: justadirck/shopping-mysql:latest
         ports:
             - 3306:3306
+        volumes:
+            - mysql:/var/lib/mysql
+
+volumes:
+    mysql:
+        driver: local            

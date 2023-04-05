@@ -1,10 +1,12 @@
 FROM mysql:8.0
 
 ENV MYSQL_ROOT_HOST %
-ENV MYSQL_USER shopping
-ENV MYSQL_PASSWORD shopping
-ENV MYSQL_DATABASE shopping
+ENV MYSQL_USER ${stack}
+ENV MYSQL_PASSWORD ${stack}
+ENV MYSQL_DATABASE ${stack}
 ENV MYSQL_ALLOW_EMPTY_PASSWORD "yes"
 
 COPY conf.d /etc/mysql/conf.d/
 COPY initdb.d /docker-entrypoint-initdb.d/
+
+EXPOSE 3306
