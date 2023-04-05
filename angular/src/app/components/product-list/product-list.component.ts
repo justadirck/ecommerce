@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
     previousCategoryId: number = 1
 
     page: number = 1
-    pagesize: number = 10
+    pagesize: number = 25
     totalsize: number = 0
 
     previousKeyword: string = ""

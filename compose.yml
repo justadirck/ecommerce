@@ -2,11 +2,11 @@ version: "3.8"
 
 services:
 
-    # angular:
-    #     # build: angular
-    #     image: justadirck/shopping-angular:latest
-    #     ports:
-    #         - 80:80
+    angular:
+        # build: angular
+        image: justadirck/shopping-angular:latest
+        ports:
+            - 80:80
 
     spring:
         # build: spring

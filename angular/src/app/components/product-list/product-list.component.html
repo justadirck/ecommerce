@@ -1,33 +1,28 @@
-<div class="main-content">
-    <div class="section-content">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
-            <div class="col" *ngFor="let tempProduct of products">
-              <div class="card h-100">
-                <a routerLink="/products/{{ tempProduct.id }}">
-                    <img class="card-img-top" src="{{ tempProduct.imageUrl }}">
-                </a>
-                <div class="card-body">
-                    <a class="text-decoration-none" routerLink="/products/{{ tempProduct.id }}">
-                        <h6 class="card-title">{{ tempProduct.name }}</h6>
-                    </a>
-                </div>
-                <!-- <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
-                <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button> -->
-              </div>
+<div class="container-fluid" style="padding-top: 100px;">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-4">
+    <div class="col" *ngFor="let product of products">
+      <div class="card h-100">
+        <a [routerLink]="['products', product.id]">
+          <img class="card-img-top" [src]="product.imageUrl">
+        </a>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <a class="text-decoration-none" [routerLink]="['products', product.id]">
+                <span class="card-title">{{ product.name }}</span>
+              </a>
             </div>
+            <div class="col">
+              <div class="p-3">{{ product.unitPrice | currency:'USD' }}</div>
+            </div>
+          </div>
         </div>
-        <div class="container-fluid">
-            <ngb-pagination class="d-flex justify-content-center"
-                [(page)]="page" [pageSize]="pagesize"
-                [collectionSize]="totalsize" [maxSize]="8"
-                [boundaryLinks]="false" (pageChange)="listProducts()">
-            </ngb-pagination>
-        </div>
+        <button class="btn btn-primary btn-sm" (click)="addToCart(product)">Add to cart</button>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <ngb-pagination class="d-flex justify-content-center" (pageChange)="listProducts()" [(page)]="page" [pageSize]="pagesize" [collectionSize]="totalsize" [boundaryLinks]="false">
+    </ngb-pagination>
+  </div>
 </div>
-
-
-
-
-
-
